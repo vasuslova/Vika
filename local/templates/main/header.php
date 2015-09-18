@@ -23,29 +23,25 @@
 	<div class="wrapper">		<!-- wrapper begins -->
 
 		<div id="header">
-			<h1>
-				<?if(!CSite::InDir('/')):?><a href="#"><?endif;?>
-					<?$APPLICATION->IncludeComponent(
-						"bitrix:main.include",
-						"",
-						Array(
-							"COMPONENT_TEMPLATE" => ".default",
-							"AREA_FILE_SHOW" => "file",
-							"AREA_FILE_SUFFIX" => "inc",
-							"EDIT_TEMPLATE" => "",
-							"PATH" => SITE_TEMPLATE_PATH."/include_areas/logo.php"
-						)
-					);?>
-				<?if(!CSite::InDir('/')):?></a><?endif;?>
-			</h1>
+			<h1><a href="#"><span>Blur Studio</span></a></h1>
 
-			<ul>
-				<li><a href="index.html" class="active">Home</a></li>
-				<li><a href="page.html">About us</a></li>
-				<li><a href="portfolio.html">Portfolio</a></li>
-				<li><a href="blog.html">Blog</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
+			<?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
+	"COMPONENT_TEMPLATE" => ".default",
+		"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+		"MENU_CACHE_TYPE" => "A",	// Тип кеширования
+		"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+		"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+		"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+			0 => "",
+		),
+		"MAX_LEVEL" => "1",	// Уровень вложенности меню
+		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+		"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+		"DELAY" => "N",	// Откладывать выполнение шаблона меню
+		"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+	),
+	false
+);?>
 		</div>		<!-- #header ends -->
 
 		<div id="holder">

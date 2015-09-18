@@ -1,5 +1,5 @@
 <?php
-namespace MIET\NEON;
+namespace MIET\VIKA;
 use Bitrix\Main\Application;
 use Bitrix\Main\Entity;
 use Bitrix\Main\Entity\Event;
@@ -19,14 +19,9 @@ class FilmManager
         $db->startTransaction();
         $result = FilmTable::add(array(
             "UF_NAME" => $arData["NAME"],
-            "UF_CINEMA" => $arData["CINEMA"],
-            "UF_PROVIDER" => $arData["PROVIDER"],
+            "UF_CINEMA" => $arData["UF_CINEMA"],
+            "UF_PROVIDER" => $arData["UF_PROVIDER"],
         ));
-        if (!$result->isSuccess()) {
-            $db->rollbackTransaction();
-            return false;
-        }
-        //$idFilm = $result->getId();
 
         if ($result->isSuccess()) {
             $db->commitTransaction();

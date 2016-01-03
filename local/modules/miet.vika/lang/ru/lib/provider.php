@@ -1,7 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Валера
- * Date: 03.01.2016
- * Time: 14:18
- */
+<?
+$MESS["PROVIDER_ID_FIELD"] = "ID поставщика";
+$MESS["PROVIDER_UF_NAME_FIELD"] = "Имя поставщика";
+$MESS["PROVIDER_UF_VIEW_FIELD"] = "Вид поставщика";
+?>

@@ -1,7 +1,6 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Валера
- * Date: 03.01.2016
- * Time: 14:17
- */
+<?
+$MESS["FILM_ID_FIELD"] = "ID film";
+$MESS["FILM_UF_NAME_FIELD"] = "Name of film";
+$MESS["FILM_UF_CINEMA_FIELD"] = "Name of cinema";
+$MESS["FILM_UF_PROVIDER_FIELD"] = "Name of provider";
+?>
